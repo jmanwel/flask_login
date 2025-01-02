@@ -1,0 +1,7 @@
+bcrypt
+datetime
+dotenv
+json
+mysql.connector
+os
+requests

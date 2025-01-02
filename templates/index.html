@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex" role="search" action="/logout" method="POST">
+            <p class="navbar-brand me-2">Hi, {{ name }}!</p>
+            <button class="btn btn-outline-danger" type="submit">Logout</button>
+        </form>
+        </div>
+    </nav>
+    <br>
+    <h1>I'm Index</h1>
+{% endblock content %}
