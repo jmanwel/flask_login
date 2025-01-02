@@ -76,6 +76,10 @@ class MySQLDatabase:
         q = f"ALTER TABLE { table_name } DROP COLUMN { column_name }"
         self.cursor.execute(q)
 
+    def call_view(self, viewName):
+        self.cursor.execute(f"SELECT * FROM { viewName }")
+        return self.cursor.fetchall()
+
     def close_connection(self):
         print("Closing connection...")
         self.cursor.close()

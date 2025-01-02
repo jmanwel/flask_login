@@ -1,6 +1,7 @@
 import bcrypt
 from datetime import datetime
-from .Mariadb_class import *
+from Mariadb_class import *
+# from .Mariadb_class import *
 
 
 FORMAT = '%Y-%m-%d %H:%M:%S'
@@ -75,3 +76,12 @@ def audit(cx: MySQLDatabase, data: dict) -> dict:
         return 0
     print("AUDIT FAILED!")
     return 1
+
+
+def checkAudit(cx: MySQLDatabase) -> dict:
+    try:
+        result_query = cx.call_view("login_details")
+        return { "result": 0, "msg": result_query }
+    except Error as e:
+        print("Error:", str(e))
+        return { "result": 1, "msg": str(e) }
