@@ -66,10 +66,11 @@ CREATE TABLE login_audit
 );
 
 ### TRIGGER
-CREATE TRIGGER track_users_insert AFTER INSERT ON users
-FOR EACH ROW
-INSERT INTO login_audit (date_time, username, result)
-VALUES (NOW(), NEW.username, 0);
+CREATE VIEW login_view AS
+SELECT username, COUNT(*) 
+FROM login_audit 
+WHERE RESULT = 0 AND CAST (date_time AS DATE) = CAST(NOW() AS DATE) 
+GROUP BY username;
 
 
 ### VIEW

@@ -79,7 +79,7 @@ def audit(cx: MySQLDatabase, data: dict) -> dict:
 
 def checkAudit(cx: MySQLDatabase) -> dict:
     try:
-        result_query = cx.call_view("login_details")
+        result_query = cx.execute_query("*", "login_view")
         return { "result": 0, "msg": result_query }
     except Error as e:
         print("Error:", str(e))
