@@ -72,3 +72,10 @@ INSERT INTO login_audit (date_time, username, result)
 VALUES (NOW(), NEW.username, 0);
 
 
+### VIEW
+CREATE VIEW login_details AS
+SELECT username, COUNT(*) 
+FROM login_audit 
+WHERE RESULT = 0
+GROUP BY username;
+
