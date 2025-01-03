@@ -1,7 +1,6 @@
 import bcrypt
 from datetime import datetime
-from Mariadb_class import *
-# from .Mariadb_class import *
+from .Mariadb_class import *
 
 
 FORMAT = '%Y-%m-%d %H:%M:%S'
