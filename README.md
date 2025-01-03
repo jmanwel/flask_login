@@ -5,13 +5,13 @@ This app is a mock to test hashing store password.
 
 ## Libraries
 
-bcrypt
-datetime
-dotenv
-json
-mysql.connector
-os
-requests
+- bcrypt
+- datetime
+- dotenv
+- json
+- mysql.connector
+- os
+- requests
 
 
 ## Usage
@@ -19,16 +19,16 @@ requests
 First, create a .env file at top level in your directory.
 This file, should contain the following keys:
 
-DATABASE=
-SERVER=
-USER=
-PASSWORD=
-PORT=
-APP_KEY=
+- DATABASE=
+- SERVER=
+- USER=
+- PASSWORD=
+- PORT=
+- APP_KEY=
 
-DATABASE_MOCK=
-USER_MOCK=
-PASSWORD_MOCK=
+- DATABASE_MOCK=
+- USER_MOCK=
+- PASSWORD_MOCK=
 
 Now, you can run the project: python app.py
 
